@@ -61,9 +61,32 @@ const palindromePermutation = (string) => {
   return Object.values(hash).every((ele) => ele % 2 === 0);
 };
 
-console.log(palindromePermutation("Taco Cat"));
-console.log(palindromePermutation("Taco Cato"));
-
 // One Away: There are three types of edits that can be performed on strings: insert a character,
 // remove a character, or replace a character. Given two strings, write a function to check if they are
 // one edit (or zero edits) away.
+
+const oneAway = (str, str2) => {
+  const hashOne = {};
+  const hashTwo = {};
+  str.split("").forEach((el) => {
+    hashOne[el] = hashOne[el] ? hashOne[el] + 1 : 1;
+  });
+  str2.split("").forEach((el2) => {
+    hashTwo[el2] = hashTwo[el2] ? hashTwo[el2] + 1 : 1;
+  });
+
+  return (
+    Math.abs(Object.values(hashOne).length - Object.values(hashTwo).length) ===
+    1
+  );
+};
+
+// String Compression: Implement a method to perform basic string compression using the counts
+// of repeated characters. For example, the string aabcccccaaa would become a2blc5a3. If the
+// "compressed" string would not become smaller than the original string, your method should return
+// the original string. You can assume the string has only uppercase and lowercase letters (a - z).
+const stringCompression = (string) => {};
+
+console.log(stringCompression("aabcccccaaa"));
+console.log(stringCompression("aaaaaa"));
+console.log(stringCompression("a"));
