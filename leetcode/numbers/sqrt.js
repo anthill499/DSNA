@@ -3,7 +3,7 @@
 //Since the return type is an integer, the decimal digits are truncated, and only the integer part of the result is returned.
 //Note: You are not allowed to use any built-in exponent function or operator, such as pow(x, 0.5) or x ** 0.5.
 
-const mySqrt = (x) => {
+function mySqrt(x) {
   let left = 0;
   let right = x;
   let mid;
@@ -14,7 +14,8 @@ const mySqrt = (x) => {
     } else if (mid * mid > x) {
       right = mid - 1;
     } else {
+      // left will still be smaller than right during search phase.
       left = mid + 1;
     }
   }
-};
+}
