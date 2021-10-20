@@ -15,12 +15,33 @@ export default class LinkedList {
       this.tail.next = newNode;
       this.tail = newNode;
     }
-    // return this;
+  }
+
+  reverse() {
+    let prevNode = this.head;
+    let currNode = this.head.next;
+    this.head.next = null;
+    let nextNode;
+    while (currNode.next) {
+      nextNode = currNode.next;
+      currNode.next = prevNode;
+      prevNode = currNode;
+      currNode = nextNode;
+    }
+    return this;
   }
 }
 
-// A -> B -> C -> D
-// A -> B -> D
+// A -> B -> C -> D  Output: A <- B <- C <- D
 
-// A -> B
-// A
+// prev A
+// curr B
+// A -> B -> C -> D
+
+// A     B -> C -> D line
+// A <- B   C -> D
+
+// nextNode D
+// prevNode B
+// currNode C
+// A <- B <- C -> D
