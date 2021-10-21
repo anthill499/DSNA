@@ -4,6 +4,10 @@
 function plusMinus(arr) {
   const leng = arr.length;
   const hash = {};
+  hash["negative"] = 0;
+  hash["positive"] = 0;
+  hash["zero"] = 0;
+  hash["negative"];
   arr.forEach((n) => {
     if (n < 0) {
       hash["negative"] = hash["negative"] ? hash["negative"] + 1 : 1;

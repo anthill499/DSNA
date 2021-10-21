@@ -1,0 +1,7 @@
+1. Can use Kadane's algorithm concept with the local and global max to keep track of variables
+
+2. Can possibly use Array.prototype.reduce(); 
+    - reduce((previous, current) => { function }, initialValue)
+    - if initialValue is null, previous is 1st element in array, current is second element in array.
+    
+3. 
