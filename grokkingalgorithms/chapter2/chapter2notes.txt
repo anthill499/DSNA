@@ -1,0 +1,21 @@
+ARRAY 
+
+Reading: O(1) Instant lookup 
+Insertion: O(N) because of re-indexing
+Deletion: O(N) because of re-indexing
+Random Access
+
+LINKED LISTS
+Reading: O(N) Start from head -> read until found
+Insertion: O(1) Re-arrange pointers
+Deletion: O(1) Re-arrange pointers
+Sequential Access
+
+2.2 Linked list
+2.3 Array
+2.4 Run time will be slower because the array's size is huge at Facebook,
+re-indexing users one memory address away will take a long time. 
+2.5 Array of linked-lists FOR NAMES
+
+Selection Sort O(N^2) 
+- touches every element once = O(N) , is performed for every element = O(N);
