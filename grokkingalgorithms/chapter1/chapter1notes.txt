@@ -1,0 +1,3 @@
+An algorithm is a set of instructions for accomplishing a task
+
+Binary search halves input size at each step. O(log N) vs. simple search O(n)
