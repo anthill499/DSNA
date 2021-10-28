@@ -1,0 +1,32 @@
+        Make a pile of boxes
+                |
+                V
+    While the pile isnt empty
+                |
+                V
+            Grab a box
+            /        \
+    If you find a   if you find a key
+    box, add it to  return;
+    the pile of 
+    boxes
+    /
+    GO BACK TO LINE 4
+
+Recursion is where a function calls itself
+The recursive case is when the function calls 
+itself. 
+The base case is when the function doesn’t call itself again … so it 
+doesn’t go into an infinite loop
+
+Call stack - uses a Stack data structure (FILO);
+When you call a function
+1) Whenever a function is called, your computer allocates memory for that function call
+2) variables are set and the function is put on to the call stack
+3) If that function calls other functions, those fns are pushed on top of the first function
+in the call stack
+4) Those last placed functions will be popped off/ returned first and handled first
+5) When it comes time to return the first function, the whole thing is complete and popped
+off the call stack
+
+• The call stack can get very large, which takes up a lot of memory.

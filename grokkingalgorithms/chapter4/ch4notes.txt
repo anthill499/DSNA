@@ -1,0 +1,11 @@
+Divide and conquer
+
+1. Figure out the base case
+2. Divide or decrease your problem until it becomes the base
+
+Euclid's algorithm
+
+4.1 Recursively sum an array
+4.2  Write a recursive function to count the number of items in a list.
+4.3 Find the maximum number in a list
+Quick Sort
