@@ -1,0 +1,12 @@
+When the interview finishes explaining the problem
+1. Exploit everything that you're given
+    - Description of problem
+    - Sample inputs and output
+    - Constraints
+    - Whiteboard / Shared screen
+2. Visualization
+    - Represent each phrase as a diagram or visualization, so it is 
+    easier to solve the question
+    - Diagram will take off your cognitive load
+    - Sample input and output will be alot easier to implement
+    
