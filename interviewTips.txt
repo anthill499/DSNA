@@ -9,4 +9,11 @@ When the interview finishes explaining the problem
     easier to solve the question
     - Diagram will take off your cognitive load
     - Sample input and output will be alot easier to implement
-    
+    - Translate into code
+    - Reverse a linked list
+3. Make solution trivial
+    - Explain solution in plain english
+    - Step-by-step (bullets)
+    - Pseudocode
+    - Functions
+    - Implement
