@@ -1,0 +1,8 @@
+Graphs
+Data in Graphs = Nodes/Vertices
+Connection between the nodes = edges
+
+Two types of graphs
+1. Directed Graphs: Graphs with ONLY one direction regarding edges
+
+2. Undirected Graphs: Graphs with no direction regarding edges

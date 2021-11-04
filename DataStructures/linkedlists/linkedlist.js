@@ -1,4 +1,4 @@
-import ListNode from "./listnode";
+import { ListNode } from "./listnode";
 
 export default class LinkedList {
   constructor(head = null, tail = null) {
@@ -45,3 +45,6 @@ export default class LinkedList {
 // prevNode B
 // currNode C
 // A <- B <- C -> D
+
+// Doubly LinkedList
+// Each node holds a reference to the next node
