@@ -35,12 +35,12 @@ const binarySearch = (arr, target) => {
     return binarySearch(arr.splice(0, midpoint), target);
   } else {
     return (
-      midpoint + binarySearch(arr.splice(midpoint + 1, arr.length), target) + 1
+      1 + midpoint + binarySearch(arr.splice(midpoint + 1, arr.length), target)
     );
   }
 };
 
-// console.log(binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
+console.log(binarySearch([-1, 0, 3, 5, 9, 12], 2));
 // console.log(binarySearch([], -3));
 
 // Quicksort
