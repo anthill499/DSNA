@@ -11,3 +11,7 @@ var twoSum = function (numbers, target) {
     }
   }
 };
+
+// Use two pointers method
+// Decrease slowly to minimize risk of (lower bound + higher)
+// to still be higher than target.
