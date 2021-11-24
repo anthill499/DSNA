@@ -1,0 +1,23 @@
+{
+  "name": "dsnapractice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "promises.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anthill499/DSNA.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anthill499/DSNA/issues"
+  },
+  "homepage": "https://github.com/anthill499/DSNA#readme",
+  "dependencies": {
+    "jest": "^27.3.1"
+  }
+}

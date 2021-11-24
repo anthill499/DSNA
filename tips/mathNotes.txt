@@ -1,1 +1,0 @@
-Math.max(a, b, c) returns the largest of the input parameters
