@@ -24,3 +24,5 @@ const sortTheList = (arr) => {
   });
   return sortedByRomansNow.map((ele) => ele.join(" "));
 };
+
+export default sortTheList;
