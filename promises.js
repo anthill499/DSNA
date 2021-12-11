@@ -4,7 +4,7 @@ const callBack = (resolve, reject) => {
   if (resolve) {
     return resolve;
   } else {
-    throw new Error("ur shit wack");
+    throw new Error("wack");
   }
 };
 
