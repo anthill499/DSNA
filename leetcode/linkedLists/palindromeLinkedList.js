@@ -14,3 +14,6 @@ var isPalindrome = function (head) {
   }
   return true;
 };
+
+// Time Complexity O(N)
+// Space Complexity O(N)
