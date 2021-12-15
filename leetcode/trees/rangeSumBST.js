@@ -18,26 +18,15 @@ const rangeSumBST = (root, low, high) => {
   let sum = 0;
   if (root.val >= low && root.val <= high) sum += root.val;
   return (
-    rangeSumBST(root.left, low, high) + rangeSumBST(root.right, low, high) + sum
+    sum + rangeSumBST(root.left, low, high) + rangeSumBST(root.right, low, high)
   );
 };
 
-var rangeSumBST = function (root, low, high) {
-  let sum = 0;
-  const rageSum = (root) => {
-    if (!root) {
-      return null;
-    }
-    if (root.val >= low && root.val <= high) {
-      sum += root.val;
-    }
-    if (root.left) {
-      rageSum(root.left);
-    }
-    if (root.right) {
-      rageSum(root.right);
-    }
-  };
-  rageSum(root);
-  return sum;
+const rangeSumBST = (root, low, high) => {
+  if (!root) return 0;
+  let curr = 0;
+  if (root.val >= low && root.val <= high) curr += root.val;
+  let left = root.val > low ? rangeSumBST(root.left, low, high) : 0;
+  let right = root.val < high ? rangeSumBST(root.right, low, high) : 0;
+  return curr + left + right;
 };
