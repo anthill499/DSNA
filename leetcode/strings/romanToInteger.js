@@ -23,7 +23,7 @@ const romanToInt = (s) => {
       result += specialCases[group];
       i++;
     } else {
-      result += dictionary[s[i]];
+      result += wwwdictionary[s[i]];
     }
   }
   return result;
