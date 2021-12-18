@@ -1,3 +1,4 @@
+// BFS
 var searchBST = function (root, val) {
   if (!root) return null;
   const queue = [root];
@@ -12,6 +13,7 @@ var searchBST = function (root, val) {
   return null;
 };
 
+// DFS
 const searchBST = (root, val) => {
   if (!root) return null;
   if (root.val === val) return root;
