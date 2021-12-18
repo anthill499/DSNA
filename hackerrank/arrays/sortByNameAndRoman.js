@@ -13,7 +13,7 @@ const sortTheList = (arr) => {
       return 0;
     }
   });
-  const sortedByRomansNow = sortedByNames.map((a, b) => {
+  const sortedByRomansNow = sortedByNames.sort((a, b) => {
     if (romanToInt(a[1]) < romanToInt(b[1])) {
       return 1;
     } else if (romanToInt(a[1]) > romanToInt(b[1])) {
