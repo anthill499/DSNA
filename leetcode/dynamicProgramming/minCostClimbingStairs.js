@@ -41,7 +41,7 @@ var minCostClimbingStairs = function (cost) {
 };
 
 const minCostClimbingStairs = (cost) => {
-  const sepArr = [cost[0], cost[1]];
+  const sepArr = [cost[0], cost[1]]; // use array to hold cost at each step
   // filled with min costs to go to that step, index represents step and min cost to get there.
   for (let i = 2; i < cost.length; i++) {
     sepArr.push(cost[i] + Math.min(sepArr[i - 2], sepArr[i - 1]));
