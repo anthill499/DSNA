@@ -39,3 +39,12 @@ var minCostClimbingStairs = function (cost) {
   const wholeSum = findSum(cost, store);
   return Math.min(wholeSum, store[cost.slice(1)]);
 };
+
+const minCostClimbingStairs = (cost) => {
+  const sepArr = [cost[0], cost[1]];
+  // filled with min costs to go to that step, index represents step and min cost to get there.
+  for (let i = 2; i < cost.length; i++) {
+    sepArr.push(cost[i] + Math.min(sepArr[i - 2], sepArr[i - 1]));
+  }
+  return Math.min(sepArr[sepArr.length - 1], sepArr[sepArr.length - 2]); // return this bc you can skip a step at any point
+};
