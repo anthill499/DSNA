@@ -17,3 +17,4 @@ const findHour = (h, m) => {
 console.log(findHour(1, 30));
 console.log(findHour(2, 30));
 console.log(findHour(11, 30));
+// hi
