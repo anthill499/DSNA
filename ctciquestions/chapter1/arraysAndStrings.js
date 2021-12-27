@@ -82,7 +82,23 @@ const oneAway = (str, str2) => {
 // of repeated characters. For example, the string aabcccccaaa would become a2blc5a3. If the
 // "compressed" string would not become smaller than the original string, your method should return
 // the original string. You can assume the string has only uppercase and lowercase letters (a - z).
-const stringCompression = (string) => {};
+const stringCompression = (string) => {
+  let answer = "";
+  const stack = [];
+  for (let i = 0; i < string.length; i++) {
+    if (stack.length === 0) {
+      stack.push(string[i]);
+    } else {
+      if (string[i] === stack[stack.length - 1]) {
+        stack.push(string[i]);
+      } else {
+        answer += stack[stack.length - 1] + stack.length;
+        stack.length;
+      }
+    }
+  }
+  return answer;
+};
 
 console.log(stringCompression("aabcccccaaa"));
 console.log(stringCompression("aaaaaa"));
