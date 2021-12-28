@@ -25,3 +25,5 @@ var middleNode = function (head) {
   }
   return tortoise;
 };
+
+// Tortoise and Hare
