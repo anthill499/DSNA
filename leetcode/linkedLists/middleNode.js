@@ -14,3 +14,14 @@ var middleNode = function (head) {
     curr = curr.next;
   }
 };
+
+var middleNode = function (head) {
+  if (!head.next) return head;
+  let tortoise = head;
+  let hare = head;
+  while (hare && hare.next) {
+    hare = hare.next.next ? hare.next.next : null;
+    tortoise = tortoise.next;
+  }
+  return tortoise;
+};
