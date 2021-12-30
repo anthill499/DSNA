@@ -8,7 +8,6 @@ const findHour = (h, m) => {
   // h * 30 because we want to covert the hour hand to degrees
   // m * 0.5 because 30 deg per hour hand
   // hrAngle = (30 x h) + (30 x m/60) second part is a percentage through the hour
-
   const diff = Math.abs(hrAngle - minAngle);
   // Abs value to consider the hours that are past 6 like 6:30
   return Math.min(360 - diff, diff);
@@ -17,4 +16,3 @@ const findHour = (h, m) => {
 console.log(findHour(1, 30));
 console.log(findHour(2, 30));
 console.log(findHour(11, 30));
-// hi
