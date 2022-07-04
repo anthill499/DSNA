@@ -21,3 +21,6 @@ function maxSubArray(nums) {
   }
   return globMax;
 }
+
+// [1, -1, 5, 4, -2] => 9
+// [1, -2, 7, -4, 11] => 14

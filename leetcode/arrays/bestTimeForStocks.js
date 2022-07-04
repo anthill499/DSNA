@@ -8,3 +8,7 @@ const maxProfit = function (prices) {
   }
   return globalMax <= 0 ? 0 : globalMax;
 };
+
+// const array = [5, 7, 2, 1, 22]
+
+// [2, 17, 2, 21, 25];
