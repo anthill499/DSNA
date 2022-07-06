@@ -50,20 +50,24 @@ console.log(depthFirstSearch(DNode, adjList)); // D
 console.log(depthFirstSearch(BNode, adjList)); // B -> D
 
 /** Breadth First Search */
-// const breadthFirstSearch = (startNode) => {
-//   console.log("BFS");
-//   const visitedNodes = new Set(); // Provides conditional just so we dont run an infinite loop
-//   const queue = [startNode]; // initialize the queue with the starting node
-//   while (queue.length > 0) {
-//     const currNode = queue.shift();
-//     for (let index = 0; index < currNode.vertices.length; index++) {
-//       if (!visitedNodes.has(currNode.vertices[index])) {
-//         queue.push(currNode.vertices[index]);
-//       }
-//     }
-//     visitedNodes.add(currNode);
-//     console.log(currNode.data);
-//   }
-//   return "Finished";
-// };
-// console.log(breadthFirstSearch(ANode));
+console.log("BFS");
+const breadthFirstSearch = (startNode, graph) => {
+  const visitedNodes = new Set(); // Provides conditional just so we dont run an infinite loop
+  const queue = [startNode]; // initialize the queue with the starting node
+  while (queue.length > 0) {
+    const currNode = queue.shift();
+    const edges = graph[JSON.stringify(currNode)];
+    for (let index = 0; index < edges.length; index++) {
+      if (!visitedNodes.has(edges[index])) {
+        queue.push(edges[index]);
+      }
+    }
+    visitedNodes.add(currNode);
+    console.log(currNode.data);
+  }
+  return "Finished";
+};
+console.log(breadthFirstSearch(ANode, adjList)); // A -> B -> D -> C -> E
+console.log(breadthFirstSearch(FNode, adjList)); // F -> D
+console.log(breadthFirstSearch(DNode, adjList)); // D
+console.log(breadthFirstSearch(BNode, adjList)); // B -> D
