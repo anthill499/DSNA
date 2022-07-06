@@ -1,17 +1,20 @@
 // Graph Node class
 
 export default class GraphNode {
-  constructor(data, vertices = []) {
-    this.vertices = vertices;
+  constructor(data, edges = []) {
     this.data = data;
+    this.edges = edges;
+    this.id = JSON.stringify(Math.ceil(Math.random() * 10000000));
   }
 
   // Hello
-  setVertices = (val) => {
-    this.vertices = val;
+  setEdges = (val) => {
+    this.edges = val;
   };
 
   setData = (data) => {
     this.data = data;
   };
+
+  returnSelf = () => this;
 }

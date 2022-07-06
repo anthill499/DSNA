@@ -6,26 +6,64 @@ const CNode = new GraphNode(`C Node Data`);
 const DNode = new GraphNode(`D Node Data`);
 const ENode = new GraphNode(`E Node Data`);
 const FNode = new GraphNode(`F Node Data`);
-ANode.setVertices([BNode, CNode]);
-BNode.setVertices([DNode]);
-CNode.setVertices([ENode]);
-ENode.setVertices([BNode]);
-FNode.setVertices([DNode]);
+ANode.setEdges([BNode, CNode]);
+BNode.setEdges([DNode]);
+CNode.setEdges([ENode]);
+ENode.setEdges([BNode]);
+FNode.setEdges([DNode]);
 
-const adjacencyMatrix = {
-  ANode: ANode.vertices,
-  BNode: BNode.vertices,
-  CNode: CNode.vertices,
-  ENode: ENode.vertices,
-  FNode: FNode.vertices,
+const adjList = {
+  [JSON.stringify(ANode)]: ANode.edges,
+  [JSON.stringify(BNode)]: BNode.edges,
+  [JSON.stringify(CNode)]: CNode.edges,
+  [JSON.stringify(DNode)]: DNode.edges,
+  [JSON.stringify(ENode)]: ENode.edges,
+  [JSON.stringify(FNode)]: FNode.edges,
 };
 
-console.log(adjacencyMatrix);
-// Depth First Search
+/**
+ * A -> C
+ * |    |
+ * v    v
+ * B <- E
+ * |
+ * v
+ * D <- F
+ */
+// console.log(adjList);
 
-// Breadth First Search
-
-const breadthFirstSearch = (startNode) => {
-  const visitedNodes = new Set(); // Provides conditional just so we dont run an infinite loop
-  const queue = [startNode]; // initialize the queue with the starting node
+/*Depth First Search*/
+console.log("DFS");
+const depthFirstSearch = (source, graph, visited = new Set()) => {
+  if (!visited.has(source)) {
+    console.log(source.data);
+  }
+  visited.add(source);
+  for (const vertice of graph[JSON.stringify(source)]) {
+    depthFirstSearch(vertice, graph, visited);
+  }
+  return;
 };
+console.log(depthFirstSearch(ANode, adjList)); // A -> B -> D -> C -> E
+console.log(depthFirstSearch(FNode, adjList)); // F -> D
+console.log(depthFirstSearch(DNode, adjList)); // D
+console.log(depthFirstSearch(BNode, adjList)); // B -> D
+
+/** Breadth First Search */
+// const breadthFirstSearch = (startNode) => {
+//   console.log("BFS");
+//   const visitedNodes = new Set(); // Provides conditional just so we dont run an infinite loop
+//   const queue = [startNode]; // initialize the queue with the starting node
+//   while (queue.length > 0) {
+//     const currNode = queue.shift();
+//     for (let index = 0; index < currNode.vertices.length; index++) {
+//       if (!visitedNodes.has(currNode.vertices[index])) {
+//         queue.push(currNode.vertices[index]);
+//       }
+//     }
+//     visitedNodes.add(currNode);
+//     console.log(currNode.data);
+//   }
+//   return "Finished";
+// };
+// console.log(breadthFirstSearch(ANode));
