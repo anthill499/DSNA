@@ -1,7 +1,6 @@
 const rand2 = () => {
   return Math.random() > 0.5 ? 1 : 0;
 };
-
 // Supposed we have a function that a function rand2
 // How do we make a function rand3 give fair chances to three people?
 
