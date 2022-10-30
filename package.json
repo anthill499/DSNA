@@ -19,5 +19,6 @@
   "homepage": "https://github.com/anthill499/DSNA#readme",
   "dependencies": {
     "jest": "^27.3.1"
-  }
+  },
+  "type": "module"
 }
