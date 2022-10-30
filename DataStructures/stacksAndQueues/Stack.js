@@ -27,9 +27,13 @@ class Stack {
     }
     return -1;
   }
+
+  size() {
+    return this.items.length;
+  }
 }
 
 // const stack = new Stack();
 const stack = new Stack([]);
 
-console.log(stack.search("d1"));
+console.log(stack.size());
