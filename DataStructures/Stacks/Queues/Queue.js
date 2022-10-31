@@ -1,81 +1,40 @@
-import { ListNode } from "../linkedlists/listnode.js";
+// import { ListNode } from "../linkedlists/listnode";
+import LinkedList from "../../linkedlists/linkedlist.js";
+import { ListNode } from "../../linkedlists/listnode.js";
+// Try implementing with LinkedList class
 
 class Queue {
   constructor() {
-    this.head = null;
-    this.tail = null;
-    this.size = 0;
+    this.list = new LinkedList();
   }
 
-  // Size of our queue
-  size() {
-    return this.size;
+  // Next element in queue
+  peek() {
+    return this.list.head;
   }
 
   isEmpty() {
-    return this.size === 0;
+    return this.list.isEmpty();
   }
 
-  // Top element of queue
-  peek() {
-    return this.head;
-  }
-
-  // adding element to queue
+  // add to queue
   enqueue(val) {
-    const newNode = new ListNode(val);
-    switch (this.size) {
-      case 0: // if queue is empty
-        this.head = newNode;
-        this.tail = newNode;
-        this.size++;
-        return;
-      case 1: // if queue only has one node
-        this.tail = newNode;
-        this.head.next = this.tail;
-        this.size++;
-        return;
-      default: // if queue only 2+ nodes
-        this.tail.next = newNode;
-        this.tail = newNode;
-        this.size++;
-        return;
-    }
+    this.list.append(val);
   }
 
-  // removing next element in queue
-  dequeue() {
-    const result = this.head;
-    switch (this.size) {
-      case 0:
-        return;
-      case 1:
-        this.head = null;
-        this.tail = null;
-        this.size--;
-        return result;
-      default:
-        this.head = this.head.next;
-        this.size--;
-        return result;
-    }
+  // Remove next element in queue, its value is returned.
+  dequeue(val) {
+    this.list.removeHead(val);
   }
 
   // Printing entire queue to console
-  list() {
-    let list = "";
-    let curr = this.head;
-    while (curr) {
-      list = list + curr.value.toString() + " -> ";
-      curr = curr.next;
-    }
-    list += "null";
-    console.table({
-      list,
-      "Time Complexity": "O(N)",
-      "Space Complexity": "O(N)",
-      queue: this,
-    });
-    return list;
+  printQueue() {
+    this.list.printList();
   }
 }
+
+const queue = new Queue();
+queue.enqueue(1);
+queue.enqueue(2);
+queue.enqueue(3);
+queue.printQueue();
