@@ -5,7 +5,6 @@ import LinkedList from "../../linkedlists/linkedlist.js";
 export default class Queue {
   constructor() {
     this.list = new LinkedList();
-    this.printQueue();
   }
 
   // Next element in queue
@@ -27,8 +26,8 @@ export default class Queue {
   }
 
   // Remove next element in queue, its value is returned.
-  dequeue(val) {
-    this.list.removeHead(val);
+  dequeue() {
+    return this.list.removeHead();
   }
 
   // Printing entire queue to console

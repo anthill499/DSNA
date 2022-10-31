@@ -27,7 +27,7 @@ export default class LinkedList {
     const result = this.head;
     switch (this.size) {
       case 0:
-        return;
+        return null;
       case 1:
         this.head = null;
         this.tail = null;
@@ -53,6 +53,16 @@ export default class LinkedList {
       this.head = newNode;
     }
     this.size++;
+  }
+
+  insert(currentNode, val) {
+    debugger;
+    console.log('hit');
+    const tempNode = new ListNode(currentNode.value);
+    tempNode.next = currentNode.next;
+    currentNode.next = tempNode;   
+    currentNode.value = val; 
+    this.size++
   }
 
   // Printing entire queue to console
