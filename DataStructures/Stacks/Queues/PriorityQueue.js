@@ -1,6 +1,8 @@
 import Queue from "./Queue.js";
 import { ListNode } from "../../linkedlists/listnode.js";
-const numComparater = (valueA, valueB) => {
+
+const ascendingComparater = (valueA, valueB) => {
+  // Ascending
   if (valueA < valueB) {
     return -1;
   } else if (valueA > valueB) {
@@ -11,7 +13,7 @@ const numComparater = (valueA, valueB) => {
 };
 
 export default class PriorityQueue extends Queue {
-  constructor(comparater = numComparater) {
+  constructor(comparater = ascendingComparater) {
     super(); // Must call super constructor in
     // derived class before accessing 'this'
     this.compare = comparater;
@@ -32,8 +34,16 @@ export default class PriorityQueue extends Queue {
   }
 
   enqueue(val) {
-    if (this.compare(val, this.list.head) === -1) {
+    // if value is larger than head
+    if (this.compare(this.list.head, val) === -1) {
       this.list.addToHead(val);
+      return;
+    }
+
+    // if value is less than tail's value
+    if (this.compare(this.list.tail, val) === 1) {
+      this.list.append(val);
+      return;
     }
   }
 
