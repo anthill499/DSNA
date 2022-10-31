@@ -40,6 +40,21 @@ export default class LinkedList {
     }
   }
 
+  addToHead(val) {
+    const newNode = new ListNode(val);
+
+    // Keep track of current head
+    if (this.size === 0) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      const temp = this.head;
+      newNode.next = temp;
+      this.head = newNode;
+    }
+    this.size++;
+  }
+
   // Printing entire queue to console
   printList() {
     let list = "";
