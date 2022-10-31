@@ -109,6 +109,4 @@ pq.enqueue(50);
 pq.enqueue(100);
 // pq.dequeue();
 // pq.dequeue();
-// pq.dequeue();
-// pq.dequeue();
 pq.printPriorityQueue();
