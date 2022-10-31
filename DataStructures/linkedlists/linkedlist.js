@@ -1,50 +1,54 @@
-import { ListNode } from "./listnode";
+import { ListNode } from "./listnode.js";
 
 export default class LinkedList {
-  constructor(head = null, tail = null) {
-    this.head = head;
-    this.tail = tail;
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.size = 0;
+  }
+
+  isEmpty() {
+    return this.size === 0;
   }
 
   append(value) {
     const newNode = new ListNode(value);
-    if (!this.head) {
+    if (this.size === 0) {
       this.head = newNode;
       this.tail = newNode;
     } else {
       this.tail.next = newNode;
       this.tail = newNode;
     }
+    this.size++;
   }
 
-  reverse() {
-    let prevNode = this.head;
-    let currNode = this.head.next;
-    this.head.next = null;
-    let nextNode;
-    while (currNode.next) {
-      nextNode = currNode.next;
-      currNode.next = prevNode;
-      prevNode = currNode;
-      currNode = nextNode;
+  removeHead() {
+    const result = this.head;
+    switch (this.size) {
+      case 0:
+        return;
+      case 1:
+        this.head = null;
+        this.tail = null;
+        this.size--;
+        return result;
+      default:
+        this.head = this.head.next;
+        this.size--;
+        return result;
     }
-    return this;
+  }
+
+  // Printing entire queue to console
+  printList() {
+    let list = "";
+    let curr = this.head;
+    while (curr) {
+      list = list + curr.value.toString() + " -> ";
+      curr = curr.next;
+    }
+    list += "null";
+    return list;
   }
 }
-
-// A -> B -> C -> D  Output: A <- B <- C <- D
-
-// prev A
-// curr B
-// A -> B -> C -> D
-
-// A     B -> C -> D line
-// A <- B   C -> D
-
-// nextNode D
-// prevNode B
-// currNode C
-// A <- B <- C -> D
-
-// Doubly LinkedList
-// Each node holds a reference to the next node
