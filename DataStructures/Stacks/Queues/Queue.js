@@ -1,11 +1,11 @@
 // import { ListNode } from "../linkedlists/listnode";
 import LinkedList from "../../linkedlists/linkedlist.js";
-import { ListNode } from "../../linkedlists/listnode.js";
 // Try implementing with LinkedList class
 
-class Queue {
+export default class Queue {
   constructor() {
     this.list = new LinkedList();
+    this.printQueue();
   }
 
   // Next element in queue
@@ -15,6 +15,10 @@ class Queue {
 
   isEmpty() {
     return this.list.isEmpty();
+  }
+
+  size() {
+    return this.list.size;
   }
 
   // add to queue
@@ -29,12 +33,10 @@ class Queue {
 
   // Printing entire queue to console
   printQueue() {
-    this.list.printList();
+    const list = this.list.printList();
+    console.table({
+      "Queue Representation": list,
+      Queue: this.list,
+    });
   }
 }
-
-const queue = new Queue();
-queue.enqueue(1);
-queue.enqueue(2);
-queue.enqueue(3);
-queue.printQueue();
