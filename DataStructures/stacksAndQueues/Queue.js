@@ -7,10 +7,21 @@ class Queue {
     this.size = 0;
   }
 
+  // Size of our queue
+  size() {
+    return this.size;
+  }
+
+  isEmpty() {
+    return this.size === 0;
+  }
+
+  // Top element of queue
   peek() {
     return this.head;
   }
 
+  // adding element to queue
   enqueue(val) {
     const newNode = new ListNode(val);
     switch (this.size) {
@@ -32,6 +43,7 @@ class Queue {
     }
   }
 
+  // removing next element in queue
   dequeue() {
     const result = this.head;
     switch (this.size) {
@@ -49,10 +61,7 @@ class Queue {
     }
   }
 
-  size() {
-    return this.size;
-  }
-
+  // Printing entire queue to console
   list() {
     let list = "";
     let curr = this.head;
