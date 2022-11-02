@@ -55,14 +55,15 @@ export default class LinkedList {
     this.size++;
   }
 
-  insert(currentNode, val) {
-    debugger;
-    console.log('hit');
+  insert(currentNode, val, isTailNode = false) {
     const tempNode = new ListNode(currentNode.value);
     tempNode.next = currentNode.next;
-    currentNode.next = tempNode;   
-    currentNode.value = val; 
-    this.size++
+    currentNode.next = tempNode;
+    currentNode.value = val;
+    if (isTailNode === true) {
+      this.tail = currentNode.next;
+    }
+    this.size++;
   }
 
   // Printing entire queue to console
