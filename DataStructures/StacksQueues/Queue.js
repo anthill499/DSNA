@@ -1,5 +1,4 @@
-// import { ListNode } from "../linkedlists/listnode";
-import LinkedList from "../../linkedlists/linkedlist.js";
+import LinkedList from "../linkedlists/linkedlist.js"
 // Try implementing with LinkedList class
 
 export default class Queue {
