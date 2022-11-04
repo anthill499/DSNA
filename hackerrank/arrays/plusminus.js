@@ -21,3 +21,24 @@ function plusMinus(arr) {
   console.log((hash["negative"] / leng).toFixed(6));
   console.log((hash["zero"] / leng).toFixed(6));
 }
+
+function plusMinusSpaceEfficient(numbers) {
+  let positives = 0;
+  let negatives = 0;
+  let zeroes = 0;
+  for (const num of numbers) {
+    if (num < 0) {
+      negatives++;
+    } else if (num > 0) {
+      positives++;
+    } else {
+      zeroes++;
+    }
+  }
+  const total = positives + negatives + zeroes;
+  console.log(positives / total);
+  console.log(negatives / total);
+  console.log(zeroes / total);
+}
+
+console.log(plusMinusSpaceEfficient([1, 2, -3, -4, 0, 1, 3]));
